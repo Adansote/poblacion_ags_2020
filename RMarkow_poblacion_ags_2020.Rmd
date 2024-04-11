@@ -1,0 +1,60 @@
+---
+title: "Poblacion de AGS"
+author: "ADN"
+date: "2024-04-10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Poblacion de Aguscalientes dividido por Municipios
+
+La ciudad de Aguascalientes cuenta con 11 municipios, lo cuale en este informe se mostrara un resumen y visualizaciones, de la poblacion que conforma cada municipio.
+
+## En la siguente tabla se muestra el total de la poblacion de la cuidad de Aguascalientes, de la misma forma dividido entre la poblacion total entre mujeres y hombres.
+
+```{r}
+# Genera la tabla HTML con algunas opciones adicionales
+
+knitr::kable(total_poblacion1, 
+             format = "html", 
+             align = c("l", "c", "c", "c"), # Alineación de columnas
+             digits = 0, # Sin decimales para los números
+             caption = "Población por municipio") # Agrega un título a la tabla
+
+```
+
+## En este segmento se desglosa la poblacion, por municipios, de lo cual se puede ver cuales son los mas poblados de la ciudad.
+
+```{r}
+knitr::kable(total_poblacion, format = "html")
+
+```
+
+## grafica de paste de la poblacion dividida por municipos
+
+En esta grafica se puede distinguir que la capital de Aguscalientes es la mas poblada del estado, segida de Jesus Maria, le sigue San francisco de los Romo.
+
+```{r gg_pastel, echo=FALSE}
+plot(gg_pastel)
+```
+
+## Graficas individiuales por municipio con representacion a su poblacion
+
+```{r gg_total_poblacion, echo=FALSE}
+plot(gg_total_poblacion)
+```
+
+Nota:Fuente Datos recuperados del INEGI 2020. Documeto realizado como practica para el analisis de datos.
+
+\*Nombre de variables que se muestran en el documento
+
+NOM_MUN: Representa el nombre de la ciudad.
+
+POBTOT: Representa el total de la poblacion de la ciudad.
+
+POBFEM: Representa el total de la poblacion femenina.
+
+POBMAS: Representa el total de la poblacion masculina.
