@@ -1,0 +1,55 @@
+---
+title: "prueba2"
+author: "Adan"
+date: "2024-04-12"
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+---
+
+# Poblacion de Aguascalientes dividido por Municipios y genero.
+
+**La ciudad de Aguascalientes cuenta con 11 municipios, lo cual en este informe se mostrara un resumen y visualizaciones, de la poblacion total y los municipios que lo conforman.**
+
+## En la siguiente tabla se muestra el total de la poblacion de la cuidad de Aguascalientes, de la misma forma dividido entre la poblacion total entre mujeres y hombres.
+
+```{r}
+total_poblacion1
+
+```
+
+## En este segmento se desglosa la poblacion, por municipios, de lo cual se puede ver cuales son los mas poblados de la ciudad, tambien divididos por genero.
+
+```{r ,rows.print=11}
+total_poblacion
+
+```
+
+## Grafica de paste de la poblacion dividida por municipos, en esta grafica se puede distinguir que la capital de Aguscalientes es la mas poblada del estado, seguida de Jesus Maria, le sigue San francisco de los Romo.
+
+```{r}
+plot(gg_pastel)
+
+```
+
+## En esta grafica se muestra la distribucion poblacional de genero, en este caso Hombre y Mujer, reprecentada por las siglas POBMAS y POBFEM.
+
+```{r , echo=FALSE}
+plot(gg_pastel2)
+
+```
+
+## Como podemos ver en este resumen la poblacion total de el estado de Aguascalientes es de 1,425607, y su capital Aguascalientes cuenta con 948,990 personas y uno de los municipios menos poblados es San Jose de Gracia que cuenta tan solo 9,552. El porcentaje total de la poblacion masculina en Aguascalientes es de 48.87% por otro lado el porcentaje de la poblacion de mujeres es de 51.13%. Esto indica que la diferencia poblacional entre hombres y mujeres es de apenas del 2.26%.
+
+**Nota:** Fuente Datos recuperados del INEGI 2020. Documento realizado como practica para el analisis de datos.
+
+\*Nombre de variables que se muestran en el documento
+
+**NOM_MUN:** Representa el nombre de la ciudad.
+
+**POBTOT:** Representa el total de la poblacion de la ciudad.
+
+**POBFEM:** Representa el total de la poblacion femenina.
+
+**POBMAS:** Representa el total de la poblacion masculina.
